@@ -1,0 +1,60 @@
+</DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>加法计算器</title>
+        <style>
+            body {
+                font-family: YouYuan, sans-serif;
+            }
+            div {
+                width: 300px;
+                height: 300px;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                margin: -150px 0 0 -100px;
+                text-align: center;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            button {
+                width: 50px;
+                height: 30px;
+                font-size: medium;
+                background-color: blue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>加法计算器</h1>
+            <form id="calculator">
+                <label for="first">请输入第一个数字:</label>
+                <input type="text" id="first">
+                <br><br>
+                <label for="second">请输入第二个数字:</label>
+                <input type="text" id="second">
+                <br><br>
+                <button type="button" onclick="calculate()">计算</button>
+            </form>
+            <script>
+                function calculate() {
+                    let num1 = document.getElementById("first").value;
+                    let num2 = document.getElementById("second").value;
+                    if (isNaN(num1) || isNaN(num2) || num1=="" || num2=="") {
+                        alert("请输入有效的数字");
+                    } else {
+                        alert(parseFloat(num1)+parseFloat(num2));
+                    }
+                    document.getElementById("first").value='';
+                    document.getElementById("second").value='';
+                }
+            </script>
+        </div>
+    </body>
+</html>
